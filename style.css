@@ -1,0 +1,144 @@
+html,
+body {
+  margin: 20px;
+  padding: 0px;
+  background-color: rgb(31, 60, 225);
+  font-family: 'DotGothic16', sans-serif;
+
+}
+
+canvas {
+  display: block;
+
+
+
+}
+
+.reminder {
+  position: fixed;
+  right: 10px;
+  top: 400px;
+  height: 18%;
+  width: 10%;
+  font-size: 15px;
+  padding-left: 4px;
+  color: rgb(239, 11, 239);
+  z-index: 1;
+
+}
+
+h1 {
+  padding-top: 15px;
+  padding-bottom: 18px;
+  padding-left: 20px;
+
+  font-size: 50px;
+  position: relative;
+  top: -30px;
+  background-color: rgb(16, 36, 103);
+  color: rgb(237, 41, 211);
+
+  /*border-style: solid;
+  border-width: 10px;
+  border-right-color: rgb(35, 35, 35);
+  border-bottom-color: rgb(35, 35, 35);
+  border-left-color: rgb(249, 245, 245);
+  border-top-color: rgb(249, 245, 245);*/
+
+}
+
+
+a {
+  color: rgb(249, 247, 247);
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: none;
+  font-size: 30px;
+  position: relative;
+  top: 18px;
+
+
+
+}
+
+a:hover {
+  color: rgb(255, 255, 255);
+  /*text-decoration: underline;*/
+  background-color: rgb(16, 36, 103);
+}
+
+P {
+  font-size: 20px;
+}
+
+.description {
+  font-size: 20px;
+  margin-top: 40px;
+
+
+}
+
+h {
+  padding-top: 15px;
+  padding-bottom: 18px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 75%;
+  font-size: 50px;
+  position: relative;
+
+  background-color: rgb(211, 211, 210);
+
+  border-style: solid;
+  border-width: 10px;
+  border-right-color: rgb(35, 35, 35);
+  border-bottom-color: rgb(35, 35, 35);
+  border-left-color: rgb(249, 245, 245);
+  border-top-color: rgb(249, 245, 245);
+
+}
+
+#button {
+  padding-left: 15px;
+  position: absolute;
+  top: 10px;
+  right: 55px;
+  width: 35px;
+  height: 50px;
+  font-size: 36px;
+  background-color: rgb(213, 211, 206);
+  border-style: solid;
+  border-width: 10px;
+  border-right-color: rgb(35, 35, 35);
+  border-bottom-color: rgb(35, 35, 35);
+  border-left-color: rgb(249, 245, 245);
+  border-top-color: rgb(249, 245, 245);
+
+}
+
+.project {
+  position: relative;
+  padding: 20px;
+  margin: 15px;
+  border-style: solid;
+  border-width: 10px;
+  border-right-color: rgb(35, 35, 35);
+  border-bottom-color: rgb(35, 35, 35);
+  border-left-color: rgb(249, 245, 245);
+  border-top-color: rgb(249, 245, 245);
+
+}
+
+
+canvas2 {
+  display: block;
+}
+
+canvas3 {
+  display: block;
+}
+
+canvas4 {
+  display: block;
+}
