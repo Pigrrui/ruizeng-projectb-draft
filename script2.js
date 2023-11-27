@@ -2,7 +2,7 @@ let rotatingImage;
 let runningImages = [];
 
 function preload() {
-  rotatingImage = loadImage('/lib/joker2.png');
+  rotatingImage = loadImage('joker2.png');
   joker=loadImage("joker.png")
 }
 
