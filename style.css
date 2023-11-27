@@ -133,14 +133,14 @@ h {
 
 
 .project1{
-  background-image: url("https://github.com/Pigrrui/ruizeng-projectb-draft/blob/main/dreamcore1.jpg");
+  background-image:url(./lib/dreamcore1.jpg);
  }
 
  .project2{
-  background-image: url("https://github.com/Pigrrui/ruizeng-projectb-draft/blob/main/dreamcore2.jpg");
+  background-image: url(./lib/dreamcore2.jpg);
  }
  .project3{
-  background-image: url("https://github.com/Pigrrui/ruizeng-projectb-draft/blob/main/dreamcore3.jpg");
+  background-image: url(./lib/dreamcore3.jpg);
  }
 
 
@@ -154,6 +154,6 @@ canvas3 {
 }
 
 canvas4 {
-  
+
   display: block;
 }
