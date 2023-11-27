@@ -10,11 +10,11 @@ let ifBalloon = true;
 function preload(){
   joker=loadImage("joker.png")
   background1=loadImage("background.jpg")
-  rotatingImage=loadImage("/lib/joker2.png")
+  rotatingImage=loadImage("joker2.png")
   balloon=loadImage("ballons.png")
   climbers=loadImage("climbers.png")
   device=loadImage("installtion.png")
-  train=loadImage("/lib/train.png")
+  train=loadImage("train.png")
  
  
 }
