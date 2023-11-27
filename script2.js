@@ -7,8 +7,8 @@ function preload() {
 }
 
 function setup() {
-    let canvas3 = createCanvas(630, 630);
-    canvas3.parent("p5-container2")
+    let canvas2 = createCanvas(630, 630);
+    canvas2.parent("p5-container2")
     
 }
 
