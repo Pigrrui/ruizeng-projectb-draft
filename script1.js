@@ -6,6 +6,13 @@ let fireworks=[]
 let currentImage;
 let scene = 1;
 let ifBalloon = true;
+let balloons=[]
+let trianx;
+let triany;
+let trian;
+let trianRun = false;
+let baloonContent=[];
+
 
 function preload(){
   joker=loadImage("joker.png")
@@ -14,18 +21,32 @@ function preload(){
   balloon=loadImage("ballons.png")
   climbers=loadImage("climbers.png")
   device=loadImage("installtion.png")
-  train=loadImage("train.png")
- 
+  trian=loadImage("train.png")
+  device=loadImage("installtion.png")
+  background2=loadImage("IMG_4449.jpg")
+  for(let i = 0; i < 6; i ++){
+    let picName = "pic" + i+".jpg";
+    let pic = loadImage(picName);
+    baloonContent.push(pic);
+  }
  
 }
 
 
 function setup() {
   let canvas = createCanvas(630, 630);
+  trianx=380
+  triany=550
   canvas.parent("p5-container")
   currentImage = background1;
+  for(let i = 0; i < 7; i ++){
+     
+  }
+  for (let i = 0; i < 7; i++) {
+    let balloon = new Balloon(random(width), random(height));
+    balloons.push(balloon);
+  }
 }
-
 
 
 
@@ -38,42 +59,67 @@ function draw() {
   background(0,47,167);
 
   
-    push()
-  translate(width/2,height/2)
+  
   let angle=radians(frameCount)
-  rotate(angle)
-  imageMode(CENTER)
-  image(currentImage,0,0,880,880)
-  pop()
   
   
-  
-  
-  
-  
+ 
   
   
   
 
   if(scene==1){
-      image(background1,0,0,650,650)
-  
     push()
   translate(width/2,height/2)
-  let angle=radians(frameCount)
+  
   rotate(angle)
   imageMode(CENTER)
   image(currentImage,0,0,880,880)
   pop()
+      image(background1,0,0,650,650)
+     
+    
+    push()
+  translate(width/2,height/2)
+  rotate(angle)
+    
+  imageMode(CENTER)
+  image(currentImage,0,0,880,880)
+  pop()
+  
   if(ifBalloon){
      image(balloon,0,0,350,300)
      }
     
+    if(trianRun){
+       trianx+=1;
+      console.log(trianx)
+    }
+    
+    if(trianx==810){
+    trianx=-50
+      
+    }
   image(climbers,0,280,440,360)
     image(joker,210,30,450,450)
-    image(device,0,420,260,210)
-    image(train,280,480,350,150)
-   
+    push();
+    imageMode(CENTER);
+    image(trian,trianx,triany,350,150)
+    pop();
+   image(device,0,420,260,210)
+    
+
+    
+    
+  } else if (scene == 2) {
+    
+      image(background2,0,0,630,630)
+
+       for (let i = 0; i < balloons.length; i++) {
+      balloons[i].display();
+      balloons[i].float();
+    }
+    
   }
   for (let i=0; i<runningImages.length;i++){
     runningImages[i].display()
@@ -91,7 +137,7 @@ function draw() {
   }
   
    
-  
+
 
 }
 
@@ -103,7 +149,25 @@ function keyPressed(){
 
 function mouseClicked(){
   
-  if(mouseX>200&&mouseX<630&&mouseY>200&&mouseY<630){
+  if(mouseX>280&&mouseX<630&&mouseY>380&&mouseY<630 && scene==1){
+   if(!trianRun){
+     trianRun = true;
+     }
+  }
+
+  for (let i = 0; i < balloons.length; i++) {
+    if(scene == 2 && balloons[i].isbaloon){
+      if(dist(mouseX, mouseY, balloons[i].x, balloons[i].y) <= balloons[i].diameter){
+        
+           balloons[i].isbaloon = false;
+        
+      }
+    }
+      balloons[i].display();
+    }
+  
+  
+  if(mouseX>200&&mouseX<630&&mouseY>200&&mouseY<630 && scene==1){
     
   let runningImage= new RunningImage(rotatingImage,mouseX,mouseY)
   runningImages.push(runningImage)
@@ -116,10 +180,13 @@ function mouseClicked(){
   
 ){
     scene = 2;
+ 
     ifBalloon = false;
     explodeFirework()
+
   }
-  
+
+    
 }
 
 
@@ -218,9 +285,51 @@ class Particle {
   }
 }
 
+class Balloon {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.diameter = random(150, 230);
+    this.color = color(random(255), random(250), random(255));
+    this.xSpeed = random(-5, 2);
+    this.ySpeed = random(-5, 2);
+    this.arrayindex=floor(random(0,6));
+  this.isbaloon = true;
+  }
+  
+  display() {
+    if(!this.isbaloon){
+      let picture = baloonContent[this.arrayindex];
+      console.log(picture);
+      image(picture,this.x, this.y);
+    } else{
+      fill(this.color);
+    ellipse(this.x, this.y, this.diameter, this.diameter);
+    }
+    
+    
+  }
+
+  float() {
+    this.x += this.xSpeed;
+    this.y += this.ySpeed;
+
+    if (this.x < 0 || this.x > width) {
+      this.xSpeed *= -1;
+    }
+    if (this.y < 0 || this.y > height) {
+      this.ySpeed *= -1;
+    }
+  }
+}
 
 
 
 
 
+
+
+
+
+     
 
