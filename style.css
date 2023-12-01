@@ -28,13 +28,16 @@ canvas {
 }
 
 h1 {
-  padding-top: 15px;
-  padding-bottom: 18px;
-  padding-left: 20px;
+  /* padding: 15px; */
+  /* left: 50%; */
+  text-align: center;
+ 
+ /* padding-bottom: 18px;
+  padding-left: 20px; */
 
   font-size: 50px;
-  position: relative;
-  top: -30px;
+  /* position: relative;
+  top: -30px; */
   background-color: rgb(16, 36, 103);
   color: rgb(237, 41, 211);
 
