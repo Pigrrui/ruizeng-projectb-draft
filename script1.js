@@ -30,6 +30,7 @@ function preload(){
     let pic = loadImage(picName);
     baloonContent.push(pic);
     mySound = loadSound("beat.mp3");
+    mySound1=loadSound("joker.mp3")
   }
  
 }
@@ -175,7 +176,7 @@ function mouseClicked(){
   
   
   if(mouseX>200&&mouseX<630&&mouseY>200&&mouseY<630 && scene==1){
-    
+    mySound1.play()
   let runningImage= new RunningImage(rotatingImage,mouseX,mouseY);
   runningImages.push(runningImage);
   if(runningImages.length>=10){
@@ -337,14 +338,3 @@ class Balloon {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-     
-
