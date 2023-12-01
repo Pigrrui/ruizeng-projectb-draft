@@ -13,6 +13,7 @@ let trian;
 let trianRun = false;
 let baloonContent=[];
 let bRed = false;
+let soundIsPlaying = false;
 
 
 function preload(){
@@ -154,9 +155,19 @@ function keyPressed(){
 
 function mouseClicked(){
 
-    mySound.play();
-
   
+
+    if (!soundIsPlaying) {
+      mySound.play();
+      soundIsPlaying = true;
+
+      setTimeout(() => {
+        soundIsPlaying = false;
+      }, mySound.duration() * 1000); 
+    }
+
+
+
   if(mouseX>280&&mouseX<630&&mouseY>380&&mouseY<630 && scene==1){
    if(!trianRun){
      trianRun = true;
