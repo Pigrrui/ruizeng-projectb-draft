@@ -29,6 +29,7 @@ function preload(){
     let picName = "pic" + i+".jpg";
     let pic = loadImage(picName);
     baloonContent.push(pic);
+    mySound = loadSound("beat.mp3");
   }
  
 }
@@ -151,6 +152,9 @@ function keyPressed(){
 }
 
 function mouseClicked(){
+
+    mySound.play();
+
   
   if(mouseX>280&&mouseX<630&&mouseY>380&&mouseY<630 && scene==1){
    if(!trianRun){
