@@ -12,6 +12,7 @@ let triany;
 let trian;
 let trianRun = false;
 let baloonContent=[];
+let bRed = false;
 
 
 function preload(){
@@ -59,7 +60,7 @@ function draw() {
   background(0,47,167);
 
   
-  
+  console.log(runningImages.length);
   let angle=radians(frameCount)
   
   
@@ -77,7 +78,9 @@ function draw() {
   image(currentImage,0,0,880,880)
   pop()
       image(background1,0,0,650,650)
-     
+      if(bRed == true){
+        tint(255,0,0);
+      }     
     
     push()
   translate(width/2,height/2)
@@ -169,8 +172,14 @@ function mouseClicked(){
   
   if(mouseX>200&&mouseX<630&&mouseY>200&&mouseY<630 && scene==1){
     
-  let runningImage= new RunningImage(rotatingImage,mouseX,mouseY)
-  runningImages.push(runningImage)
+  let runningImage= new RunningImage(rotatingImage,mouseX,mouseY);
+  runningImages.push(runningImage);
+  if(runningImages.length>=10){
+    bRed = true;
+    console.log('red');
+   }else{
+     bRed = false;
+   }
   }else if(
   
       mouseX > 0 &&
@@ -295,6 +304,7 @@ class Balloon {
     this.ySpeed = random(-5, 2);
     this.arrayindex=floor(random(0,6));
   this.isbaloon = true;
+  // this.iamge = img
   }
   
   display() {
@@ -305,6 +315,7 @@ class Balloon {
     } else{
       fill(this.color);
     ellipse(this.x, this.y, this.diameter, this.diameter);
+    // image(this.img, this.x, this.y );
     }
     
     
