@@ -26,7 +26,7 @@ function preload() {
   device=loadImage("installtion.png");
   trian=loadImage("train.png");
   device=loadImage("installtion.png");
-  background2=loadImage("IMG_4449.jpg");
+  background2=loadImage("scene3.jpg");
   for (let i = 0; i < 6; i ++) {
     let picName = "pic" + i+".jpg";
     let pic = loadImage(picName);
