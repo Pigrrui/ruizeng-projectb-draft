@@ -108,15 +108,15 @@ function draw() {
 
     image(background2, 0, 0, 630, 630);
 
-    // 判断是否所有气球都被点了
+  
     print("isAllBallonsClicked = " + isAllBallonsClicked);  /////////
     if (isAllBallonsClicked == false) {
-      print("判断是否所有气球都被点了");  //////////
+      print();  //////////
       checkBallonsClickStatus(balloons);
     } else {
-      //tint(0, 255, 0);    // bGreen  绿色
-      //tint(255, 255, 255);    // bWhite  白色
-      tint(255, 255, 255, 200);    // bWhite  白色
+      //tint(0, 255, 0);    // bGreen  
+      //tint(255, 255, 255);    // bWhite  
+      tint(255, 255, 255, 200);    // bWhite  
     }
 
     for (let i = 0; i < balloons.length; i++) {
