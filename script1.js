@@ -70,7 +70,7 @@ function draw() {
     pop();
     image(background1, 0, 0, 650, 650);
     if (bRed == true) {
-      print("bRed tint");  ///////////
+   //   print("bRed tint");  ///////////
       tint(255, 0, 0);
     }
 
