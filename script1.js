@@ -41,7 +41,7 @@ function setup() {
   let canvas = createCanvas(630, 630);
   trianx=380;
   triany=550;
-  //canvas.parent("p5-container");
+  canvas.parent("p5-container");
   currentImage = background1;
   for (let i = 0; i < 7; i ++) {
   }
