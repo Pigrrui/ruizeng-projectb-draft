@@ -59,7 +59,7 @@ function draw() {
   let angle=radians(frameCount);
 
   if (scene == 1) {
-    print("scene1");  /////////
+   // print("scene1");  /////////
 
     push();
     translate(width/2, height/2);
