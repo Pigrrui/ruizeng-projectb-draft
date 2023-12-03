@@ -70,7 +70,7 @@ function draw() {
     pop();
     image(background1, 0, 0, 650, 650);
     if (bRed == true) {
-   //   print("bRed tint");  ///////////
+      print("bRed tint");  ///////////
       tint(255, 0, 0);
     }
 
@@ -104,7 +104,7 @@ function draw() {
 
     image(device, 0, 420, 260, 210);
   } else if (scene == 2) {
-    print("scene2");  /////////
+   // print("scene2");  /////////
 
     image(background2, 0, 0, 630, 630);
 
